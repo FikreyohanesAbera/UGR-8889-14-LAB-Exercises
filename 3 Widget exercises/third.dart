@@ -1,64 +1,74 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MainApp extends StatelessWidget {
+  const MainApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: const Center(
-            child: Text("BMI CALCULATOR"),
-          ),
+          title: const Center(child: const Text("BMI Calculator")),
+          backgroundColor: Colors.purple,
         ),
-        backgroundColor: Colors.purple,
-        body: Container(
-          child: Column(children: [
+        backgroundColor: Color.fromARGB(
+            10, 192, 13, 236), // Set the background color of the Scaffold
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
             Row(
               children: [
-                Container(
-                  child: Column(
-                    children: [
-                      const Icon(
-                        Icons.abc,
+                Card(
+                  child: SizedBox(
+                    width: 175,
+                    height: 150,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: Column(
+                              children: [
+                                Icon(Icons.male),
+                                Text('Male'),
+                              ],
+                            ),
+                          )
+                        ],
                       ),
-                      const Text("Male")
-                    ],
+                    ),
                   ),
                 ),
-                Container(
-                  color: Colors.black,
-                  child: Column(
-                    children: [
-                      const Icon(
-                        Icons.abc,
+                SizedBox(width: 10),
+                Card(
+                  child: SizedBox(
+                    width: 175,
+                    height: 150,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.female),
+                          Text('Female'),
+                        ],
                       ),
-                      const Text("Male")
-                    ],
+                    ),
                   ),
                 ),
               ],
             ),
-            Column(
-              children: [
-                Text(
-                  "Height",
+            Expanded(
+              child: SizedBox(
+                child: Center(
+                  child: Text('Female'),
                 ),
-                Text("176cm"),
-                // Slider(
-                //   value: 0,
-                //   onChanged: {},
-                // )
-              ],
-            )
-          ]),
+              ),
+            ),
+          ],
         ),
       ),
     );
