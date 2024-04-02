@@ -154,7 +154,7 @@ class MainApp extends StatelessWidget {
                       Center(
                         child: Column(
                           children: [
-                            const Text('Height'),
+                            const Text('HEIGHT'),
                             const Text("23"),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
